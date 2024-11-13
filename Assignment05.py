@@ -27,7 +27,7 @@ course_name: str = ''         # Holds the name of a course entered by the user.
 student_data: dict = {}       # one row of student data
 students: list = []           # a table of student data
 json_data: str = ''           # Holds combined string data separated by a comma.
-file_obj = None                   # Holds a reference to an opened file.
+file_obj = None               # Holds a reference to an opened file.
 menu_choice: str              # Hold the choice made by the user.
 
 # When the program starts, read the file data into a list of lists (table)
@@ -65,9 +65,9 @@ while True:
             course_name = input("Please enter the name of the course: ")
             student_data = {"FirstName": student_first_name,
                             "LastName": student_last_name,
-                            "Course": course_name}
+                            "CourseName": course_name}
             students.append(student_data)
-            print(f"You have registered {student_first_name} {student_last_name} for {course_name}.")
+            print(f"You have registered {student_data["FirstName"]} {student_data["LastName"]} for {student_data["CourseName"]}.")
         except ValueError as e:
             print(e)  # Prints custom message
             print("-- Technical Error Message --")
@@ -84,17 +84,26 @@ while True:
         # Process the data to create and display a custom message
         print("-"*50)
         for student in students:
-            print(f"Student {student["FirstName"]} {student["LastName"]} is enrolled in {student["Course"]}.")
+            print(f"Student {student["FirstName"]} {student["LastName"]} is enrolled in {student["CourseName"]}.")
         print("-"*50)
-
     # Save the data to a file
     elif menu_choice == "3":
         try:  # trap JSON format errors
             file_obj = open(FILE_NAME, "w")
             json.dump(students, file_obj)
             file_obj.close()
-            print("Data Saved!")
-            continue
+
+            # test if there's no new data to save: alert user
+            # otherwise, display data that was saved to file
+            if student_data == {}:
+                print("No new data to save to file!")
+            else:
+                print("Data Saved!\n")
+                # Display data that was saved to file
+                print("The following data was saved to file: ")
+                for student in students:
+                    print(f"Student {student["FirstName"]} {student["LastName"]} is enrolled in {student["CourseName"]}.")
+                print("-" * 50)
         except TypeError as e:
             print("Please check that the data is a valid JSON format.")
             print("-- Technical Error Message --")
