@@ -1,5 +1,5 @@
 # ------------------------------------------------- #
-# Title: Lab03 - Working with Classes and SoC
+# Title: Lab03 - Working with Functions,Classes, and SoC
 # Description: Demonstrates how classes can organize functions
 #              and how SoC organizes the placement of those functions
 #              into separate classes
@@ -254,3 +254,6 @@ while True:
     # Exit the program
     elif menu_choice == "4":
         break  # out of the while loop
+
+# Exit program gracefully
+input("\nPausing until you use the Enter key...")
