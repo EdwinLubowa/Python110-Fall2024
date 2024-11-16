@@ -231,7 +231,8 @@ students = FileProcessor.read_data_from_file(file_name=FILE_NAME, student_data=s
 
 # Repeat the following tasks
 while True:
-
+  
+    # Show menu, get menu choice
     IO.output_menu(menu=MENU)
     menu_choice = IO.input_menu_choice()
 
