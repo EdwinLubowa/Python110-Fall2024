@@ -54,7 +54,7 @@ class FileProcessor:
         RRoot,11.15.2024,Created Function
         :param file_name:
         :param student_data:
-        :return:
+        :return:list
         """
         try:
             file = open(file_name, "r")
@@ -78,7 +78,7 @@ class FileProcessor:
         RRoot,11.15.2024,Created Function
         :param file_name:
         :param student_data:
-        :return:
+        :return: None
         """
         try:
             file = open(file_name, "w")
@@ -143,7 +143,7 @@ class IO:
 
         ChangeLog: (Who, When, What)
         RRoot,11.15.2024,Created Function
-        :return: string with the user's choice
+        :return: str
         """
         choice = "0"
         try:
@@ -193,7 +193,7 @@ class IO:
         ChangeLog: (Who, When, What)
         RRoot,11.15.2024,Created Function
         :param student_data:
-        :return: string
+        :return: list
         """
         try:
             # Input the data
