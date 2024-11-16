@@ -1,6 +1,8 @@
 # ------------------------------------------------- #
-# Title: Lab03 - Working with exception handling
-# Description: Demonstrates how to use exception handling in your code
+# Title: Lab03 - Working with Classes and SoC
+# Description: Demonstrates how classes can organize functions
+#              and how SoC organizes the placement of those functions
+#              into separate classes
 # ChangeLog: (Who, When, What)
 # Edwin Kintu-Lubowa,11.15.2024,Created Script
 # ------------------------------------------------- #
