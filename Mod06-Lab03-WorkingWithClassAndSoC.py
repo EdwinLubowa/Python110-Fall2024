@@ -41,9 +41,21 @@ class FileProcessor:
 
     ChangeLog: (Who, When, What)
     RRoot,11.15.2024,Created Class
+    RRoot,11.15.2024,Added Function to read data from file
+    RRoot,11.15.2024,Added Function to write data to file
+
     """
     @staticmethod
     def read_data_from_file(file_name: str, student_data: list):
+        """
+        This Function reads data from a file using JSON module
+
+        ChangeLog: (Who, When, What)
+        RRoot,11.15.2024,Created Function
+        :param file_name:
+        :param student_data:
+        :return:
+        """
         try:
             file = open(file_name, "r")
             student_data = json.load(file)
@@ -60,7 +72,7 @@ class FileProcessor:
     @staticmethod
     def write_data_to_file(file_name: str, student_data: list):
         """
-        This Function writes data from a list to a file object
+        This Function writes data from a list table to a file using JSON module
 
         ChangeLog: (Who, When, What)
         RRoot,11.15.2024,Created Function
